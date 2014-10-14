@@ -18,7 +18,6 @@ namespace AlgorithmsConsole.BinaryTrees
             right = null;
         }
 
-
         // Upto size n, build a balanced binary search tree
         public static BST Build(int n)
         {
@@ -33,7 +32,7 @@ namespace AlgorithmsConsole.BinaryTrees
             return result;
         }
 
-        public static BST sortedArrayToBST(int[] arr, int start, int end) {
+        private static BST sortedArrayToBST(int[] arr, int start, int end) {
               if (start > end) return null;
 
               // same as (start+end)/2, avoids overflow.
