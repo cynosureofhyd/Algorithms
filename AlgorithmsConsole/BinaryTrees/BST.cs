@@ -18,6 +18,48 @@ namespace AlgorithmsConsole.BinaryTrees
             right = null;
         }
 
+        public static int maxValue(BST tree)
+        {
+            BST temp = tree;
+            while (temp.right != null)
+                temp = temp.right;
+            return temp._data;
+        }
+
+
+        public static int minValue(BST tree)
+        {
+            BST temp = tree;
+            while (temp.left != null)
+                temp = temp.left;
+            return temp._data;
+        }
+
+        //Given a binary tree, compute its "maxDepth" -- 
+        //the number of nodes along the longest path from the root node down to the farthest leaf node. 
+        //The maxDepth of the empty tree is 0, the maxDepth of the tree on the first page is 3.
+        public static int MaxDepth(BST tree)
+        {
+            if (tree == null)
+                return 0;
+            else
+            {
+                int leftCount = MaxDepth(tree.left);
+                int rightCount = MaxDepth(tree.right);
+                if (leftCount > rightCount)
+                    return leftCount + 1;
+                else
+                    return rightCount + 1;
+            }
+        }
+
+        public static int Size(BST tree)
+        {
+            if (tree == null)
+                return 0;
+            return Size(tree.left) + Size(tree.right) + 1;
+        }
+
         // Upto size n, build a balanced binary search tree
         public static BST Build(int n)
         {

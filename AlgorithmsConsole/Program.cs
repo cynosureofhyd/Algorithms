@@ -17,7 +17,11 @@ namespace AlgorithmsConsole
             //test = BST.Insert(test, 2);
             //test = BST.Insert(test, 20);
 
-            BST.Build(3);
+            BST tree = BST.Build(5);
+
+            int depth = BST.MaxDepth(tree);
+            int minValue = BST.minValue(tree);
+            int maxValue = BST.maxValue(tree);
         }
     }
 }
